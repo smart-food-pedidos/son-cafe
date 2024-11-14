@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #F6F7F8;
+}
+
+#status-circle.bg-green-600 {
+    background-color: #4CAF50;
+}
+
+#status-circle.bg-red-600 {
+    background-color: #F44336; 
+}
+
+/* Estiliza a barra de rolagem */
+#cart-items::-webkit-scrollbar {
+    width: 8px; 
+}
+
+/* Estiliza o fundo da barra de rolagem */
+#cart-items::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+/* Estiliza o "polegar" da barra de rolagem */
+#cart-items::-webkit-scrollbar-thumb {
+    background-color: #FFA500; 
+    border-radius: 10px; 
+    border: 2px solid #f1f1f1; 
+}
+
+/* Estiliza o polegar da barra de rolagem ao ser pressionado */
+#cart-items::-webkit-scrollbar-thumb:hover {
+    background-color: #FF8C00; 
+}
+
+.transition-footer {
+    transition: transform 0.5s ease-in-out;
+}
+
+.footer-hidden {
+    transform: translateY(100%);
+}
+
+.footer-visible {
+    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    #cart-modal {
+        padding: 10px;
+    }
+    #cart-items {
+        max-height: 200px; /* Ajuste conforme necessário */
+    }
+    .modal-content {
+        max-height: 90vh; /* Ajuste conforme necessário */
+        overflow-y: auto;
+    }
+}

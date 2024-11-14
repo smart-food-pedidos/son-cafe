@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!--Preloading fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:slnt,wght,FLAR,VOLM@-12..0,100..900,0..100,0..100&display=swap"
+        rel="stylesheet" />
+
+
+    <!-- Tailwind CSS-->
+    <link rel="stylesheet" href="../styles/output.css">
+
+    <title>Cafés</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="w-full h-[350px] bg-zinc-900  bg-home bg-cover bg-center relative">
+        <div class=" absolute inset-0 bg-black/70 z-0">
+            <div class="w-full h-full flex flex-col justify-center items-center z-10">
+                <img src="../assets/cafeteria/logo.jpeg" alt="Logo da lanchonete"
+                    class="w-32 h-32  rounded-full shadow-lg hover:scale-110 duration-200" loading="lazy" />
+                <h1 class="text-4xl mt-4 mb-2 font-bold text-yellow-400">Son Café</h1>
+                <span class="text-white font-medium">Endereço da empresa</span>
+
+                <div class="bg-green-600 mt-4 px-4 py-1 rounded-lg">
+                    <span class="text-center text-white font-medium">
+                        Horário de funcionamentp
+                    </span>
+
+                </div>
+                <div id="store-status" class="flex items-center mt-4 px-4 py-1 rounded-lg">
+                    <div id="status-circle" class="w-4 h-4 rounded-full mr-2"></div>
+                    <span id="status-text" class="text-center text-white font-medium">
+                        Status Restaurante
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTÃO VOLTAR À TELA INICIAL NO TOPO DIREITO -->
+        <a href="../index.html"
+            class="absolute top-4 right-4 bg-yellow-500 text-zinc-900 py-2 px-2 rounded-full hover:bg-yellow-400 transition-colors flex items-center">
+            <span class="material-symbols-outlined">
+                <img src="../assets/arrow_back.svg" alt="card-add" class="w-7 h-7 items-center">
+            </span>
+        </a>
+        <!-- FIM BOTÃO VOLTAR À TELA INICIAL NO TOPO DIREITO -->
+    </header>
+    <!-- FIM HEADER -->
+
+    <div class=" mx-auto  max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl text-center mb-10">Cafés</h2>
+    </div>
+
+    <!-- INICIO MENU-->
+    <div id="menu" class="m2">
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/cafe.jpeg" alt="Café puro"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Café Puro</p>
+                    <p class="text-sm">Café puro feito com grãos selecionados e com a melhor torra que você já provou.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 4,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Café Puro" data-price="4.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/cafe-leite.jpeg" alt="Café com leite"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Café com Leite</p>
+                    <p class="text-sm">O tradicional café com leite natural levemente adocicado.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 5,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Café com Leite" data-price="5.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/leite-canela.jpeg" alt="Leite com canela"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Leite com Canela</p>
+                    <p class="text-sm">Leite levemente adocicado e aromatizado com uma pitadinha de canela.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 5,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Leite com Canela" data-price="5,00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/capuccino.jpeg" alt="Capuccino"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Capuccino</p>
+                    <p class="text-sm">Maravilhoso capuccino cremoso com avelãs torradas.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 6,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Cpuccino" data-price="6.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/chocolate-machimelous.jpeg" alt="Chocolate com marshmallows"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Chocolate com Marshmallows</p>
+                    <p class="text-sm">Experimente a deliciosa cremosidade do chocolate quentinho com marshmallows.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 7,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Chocolate com Marshmallows" data-price="7.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM -->
+            <div class="flex gap-2">
+                <img src="../assets/cafeteria/gourmet.jpeg" alt="Café goumet"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+
+                <div class="flex-auto">
+                    <p class="font-bold">Café Gourmet</p>
+                    <p class="text-sm">Nosso café gourmet é preparado com grãos moídos na hora, tudo para manter a excelência do sabor.<br>180ml</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 8,00</p>
+                        <button type="button"
+                            class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto "
+                            data-name="Café Gourmet" data-price="8.00">
+                            <span class="material-symbols-outlined text-white">
+                                <img src="../assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM -->
+
+
+        </main>
+    </div>
+
+    </div>
+
+    <!-- FIM INICIO MENU-->
+
+
+    <!-- MODAL CARD -->
+    <div class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center modal-content"
+        id="cart-modal">
+        <div class="bg-orange-400 p-5 rounded-md min-w-[90%] md:min-w-[600px] max-h-[90vh] overflow-auto">
+            <h2 class="font-bold text-center text-2xl mb-2">Meu carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col max-h-[300px] overflow-y-auto"></div>
+
+            <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
+
+            <!-- Nova Seleção: Forma de Retirada -->
+            <p class="font-bold mt-4">Forma de Retirada:</p>
+            <select id="order-type" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="retirada">Retirada na Lanchonete</option>
+                <option value="entrega">Delivery</option>
+            </select>
+
+            <!-- Campos de Endereço (escondidos por padrão) -->
+            <div id="delivery-address" class="hidden">
+                <p class="font-bold mt-4">Endereço de Entrega:</p>
+
+                <input type="text" placeholder="Número" id="address-number" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <input type="text" placeholder="Rua" id="address-street" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <select id="bairro" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" onchange="atualizarFrete()">
+                    <option value="" selected disabled>Selecione o bairro</option>
+                    <option value="Centro">Centro - R$ 2,00</option>
+                    <option value="Novo Horizonte">Jardins - R$ 4,00</option>
+                    <option value="Pitombeira">Zona Sul - R$ 6,00</option>
+                    <option value="Boi Morto">Zona Norte - R$ 8,00</option>
+                </select>
+                <input type="text" placeholder="Cidade" id="address-city" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+            </div>
+
+            <p class="font-bold mt-4">Nome:</p>
+            <input type="text" placeholder="Digite seu nome" id="name"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+
+            <p class="font-bold mt-4">Forma de Pagamento:</p>
+            <select id="payment-method" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="Em dinheiro">Em dinheiro</option>
+                <option value="Cartão de crédito">Cartão de Crédito ou Debito</option>
+                <option value="Pix">Pix</option>
+            </select>
+
+            <p class="font-bold mt-4">Detalhes Adicionais:</p>
+            <textarea placeholder="Digite detalhes adicionais" id="additional-info"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black"></textarea>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="closed-model-btn" class="bg-red-600 text-white px-4 py-1 rounded">
+                    Fechar
+                </button>
+                <button id="checkout-btn" class="bg-green-600 text-white px-4 py-1 rounded">
+                    Finalizar pedido
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM MODAL CARD-->
+
+
+
+    <!--BUTTON CART FOOTER-->
+    <footer
+        class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center transition-footer footer-hidden"
+        id="cart-footer">
+        <button class="text-white flex items-center gap-2 font-bold" id="cart-btn">
+            (<span id="cart-count" class="">0</span>)
+            Meu carrinho
+            <span class="material-symbols-outlined text-lg text-white">
+                <img src="../assets/add_shopping.svg" alt="card_store" class="w-6 h-6">
+            </span>
+        </button>
+    </footer>
+    <!--FIM BUTTON CART FOOTER-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../scripts/statusStore.js"></script>
+    <script src="../scripts/orderCart.js"></script>
+</body>
+
+</html>

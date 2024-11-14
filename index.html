@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!--Preloading fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Commissioner:slnt,wght,FLAR,VOLM@-12..0,100..900,0..100,0..100&display=swap"
+        rel="stylesheet" />
+
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Good Burguer" />
+    <meta property="og:image" content="https://smart-food-pedidos.github.io/cardapio-online/assets/logo-good-burguer.jpg" />
+    <meta property="og:description" content="O melhor hamburguer da região" />
+    <meta property="og:site_name" content="Cardapio Online" />
+
+    <!-- Tailwind CSS-->
+    <link rel="stylesheet" href="./styles/output.css">
+    <title>Cardapio Online</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="w-full h-[350px] bg-zinc-900  bg-home bg-cover bg-center relative">
+        <div class=" absolute inset-0 bg-black/70 z-0">
+            <div class="w-full h-full flex flex-col justify-center items-center z-10">
+                <img src="./assets/cafeteria/logo.jpeg" alt="Logo da lanchonete"
+                    class="w-32 h-32  rounded-full shadow-lg hover:scale-110 duration-200" loading="lazy" />
+                <h1 class="text-4xl mt-4 mb-2 font-bold text-yellow-400">Son Café</h1>
+                <span class="text-white font-medium">Endereço da empresa</span>
+
+                <div class="bg-green-600 mt-4 px-4 py-1 rounded-lg">
+                    <span class="text-center text-white font-medium">
+                        Horário de funcionamento
+                    </span>
+
+                </div>
+                <div id="store-status" class="flex items-center mt-4 px-4 py-1 rounded-lg">
+                    <div id="status-circle" class="w-4 h-4 rounded-full mr-2"></div>
+                    <span id="status-text" class="text-center text-white font-medium">
+                        Status Restaurante
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- FIM HEADER -->
+
+    <h2 class="text-4xl md:text-5xl font-bold text-center mt-3 mb-6">Menu Online</h2>
+
+    <!-- SEÇÃO DE PRODUTOS MAIS VENDIDOS -->
+    <section class="my-12">
+        <h2 class="text-2xl md:text-5xl font-bold text-center mb-6">Os Mais Vendidos</h2>
+
+        <!-- Contêiner com scroll horizontal em dispositivos móveis -->
+        <div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 overflow-x-auto md:overflow-x-visible"
+            id="menu">
+
+            <!-- Produto Mais Vendido 1 -->
+            <div class="flex-none w-[300px] h-auto md:h-[320px] flex flex-col justify-between p-4 border rounded-lg">
+                <div class="flex gap-2">
+                    <img src="./assets/cafeteria/capuccino.jpeg" alt="Capuccino"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                    <div class="flex-auto">
+                        <p class="font-bold">Capuccino</p>
+                        <p class="text-sm line-clamp-3">Grãos de café e avelã meticulosamente selecionados e torrados para proporcionar a melhor experiência para seu paladar.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 6,00</p>
+                    <button type="button"
+                        class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto"
+                        data-name="Capuccino" data-price="6.00">
+                        <span class="material-symbols-outlined text-white">
+                            <img src="./assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- FIM PRODUTO MAIS VENDIDO 1 -->
+
+            <!-- Produto Mais Vendido 2 -->
+            <div class="flex-none w-[300px] h-auto md:h-[320px] flex flex-col justify-between p-4 border rounded-lg">
+                <div class="flex gap-2">
+                    <img src="./assets/cafeteria/pão-queijo.jpeg" alt="Pão de Queijo"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                    <div class="flex-auto">
+                        <p class="font-bold">Pão de Queijo</p>
+                        <p class="text-sm line-clamp-3">Porção de batatas crocantes e saborosas.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 4,00</p>
+                    <button type="button"
+                        class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto"
+                        data-name="Pão de Queijo" data-price="4.00">
+                        <span class="material-symbols-outlined text-white">
+                            <img src="./assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- FIM PRODUTO MAIS VENDIDO 2 -->
+
+            <!-- Produto Mais Vendido 3 -->
+            <div class="flex-none w-[300px] h-auto md:h-[320px] flex flex-col justify-between p-4 border rounded-lg">
+                <div class="flex gap-2">
+                    <img src="./assets/cafeteria/fatia-calda.jpeg" alt="Fatia de bolo com cobertura de calda de morango"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300" loading="lazy">
+                    <div class="flex-auto">
+                        <p class="font-bold">Fatia de Bolo - Calda de Morango</p>
+                        <p class="text-sm line-clamp-3">Refrescante e delicioso suco feito com os melhores abacaxis.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 justify-between mt-2">
+                    <p class="font-bold text-lg">R$ 10,00</p>
+                    <button type="button"
+                        class="bg-gray-800 px-4 py-2 rounded add-to-cart-btn flex items-center justify-center sm:w-auto"
+                        data-name="Fatia de Bolo - Calda de Morango" data-price="10.00">
+                        <span class="material-symbols-outlined text-white">
+                            <img src="./assets/shopping_cart.svg" alt="card-add" class="w-6 h-6">
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <!-- FIM PRODUTO MAIS VENDIDO 3 -->
+
+        </div>
+    </section>
+    <!-- FIM SEÇÃO DE PRODUTOS MAIS VENDIDOS -->
+
+
+    <!-- INÍCIO SEÇÃO DE CATEGORIAS -->
+    <h2 class="text-3xl md:text-5xl font-bold text-center mt-3 mb-6">Por categoria</h2>
+    <div id="menu" class="mb-12">
+        <main class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Categoria 1 -->
+                <a href="./categories/hamburgers.html"
+                    class="relative flex bg-white shadow-md rounded-lg p-4 items-center overflow-hidden group">
+                    <img src="./assets/cafeteria/gourmet.jpeg" alt="Pizzas"
+                        class="w-24 h-24 rounded-lg mr-4 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80 z-10"
+                        loading="lazy">
+                    <div>
+                        <h3 class="text-xl font-bold">Cafés</h3>
+                        <p class="text-gray-600 text-sm">Os melhores cafés, feitos com os melhores grãos.</p>
+                    </div>
+                    <!-- Efeito com a cor amarela -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-yellow-400 to-transparent opacity-0 group-hover:opacity-60 transition-all duration-500 ease-in-out">
+                    </div>
+                </a>
+
+                <!-- Categoria 3 -->
+                <a href="./categories/juices.html"
+                    class="relative flex bg-white shadow-md rounded-lg p-4 items-center overflow-hidden group">
+                    <img src="./assets/cafeteria/fatia-calda.jpeg" alt="Bolos e pães"
+                        class="w-24 h-24 rounded-lg mr-4 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80 z-10"
+                        loading="lazy">
+                    <div>
+                        <h3 class="text-xl font-bold">Acompanhamentos</h3>
+                        <p class="text-gray-600 text-sm">As melhores massas e recheios para acompanhar o melhor café.</p>
+                    </div>
+                    <!-- Efeito com a cor amarela -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-yellow-400 to-transparent opacity-0 group-hover:opacity-60 transition-all duration-500 ease-in-out">
+                    </div>
+                </a>
+
+                <!-- Categoria 2 -->
+                <a href="./categories/drinks.html"
+                    class="relative flex bg-white shadow-md rounded-lg p-4 items-center overflow-hidden group">
+                    <img src="./assets/cafeteria/cup-creme.jpeg" alt="Cupcakes"
+                        class="w-24 h-24 rounded-lg mr-4 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-80 z-10"
+                        loading="lazy">
+                    <div>
+                        <h3 class="text-xl font-bold">Cupcakes</h3>
+                        <p class="text-gray-600 text-sm">Cupcakes de frutas, creme de café e muitos outros sabores pra você se deliciar.</p>
+                    </div>
+                    <!-- Efeito com a cor amarela -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-yellow-400 to-transparent opacity-0 group-hover:opacity-60 transition-all duration-500 ease-in-out">
+                    </div>
+                </a>
+                
+                
+                
+            </div>
+        </main>
+    </div>
+    <!-- FIM SEÇÃO DE CATEGORIAS -->
+
+    </div>
+
+    <!-- FIM MENU-->
+
+    <!-- MODAL CARD -->
+    <div class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center modal-content"
+        id="cart-modal">
+        <div class="bg-orange-400 p-5 rounded-md min-w-[90%] md:min-w-[600px] max-h-[90vh] overflow-auto">
+            <h2 class="font-bold text-center text-2xl mb-2">Meu carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col max-h-[300px] overflow-y-auto"></div>
+
+            <p class="font-bold">Total: <span id="cart-total">R$ 0.00</span></p>
+
+            <!-- Nova Seleção: Forma de Retirada -->
+            <p class="font-bold mt-4">Selecione a opção de entrega:</p>
+            <select id="order-type" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="retirada">Retirada na Lanchonete</option>
+                <option value="entrega">Dlivery</option>
+            </select>
+
+            <!-- Campos de Endereço (escondidos por padrão) -->
+            <div id="delivery-address" class="hidden">
+                <p class="font-bold mt-4">Endereço de Entrega:</p>
+                <input type="text" placeholder="Número" id="address-number" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <input type="text" placeholder="Rua" id="address-street" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+                <select id="bairro" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" onchange="atualizarFrete()">
+                    <option value="" selected disabled>Selecione o bairro</option>
+                    <option value="Centro">Centro - R$ 2,00</option>
+                    <option value="Novo Horizonte">Jardins - R$ 4,00</option>
+                    <option value="Pitombeira">Zona Sul - R$ 6,00</option>
+                    <option value="Boi Morto">Zona Norte - R$ 8,00</option>
+                </select>
+                <input type="text" placeholder="Cidade" id="address-city" class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+            </div>
+
+            <p class="font-bold mt-4">Nome:</p>
+            <input type="text" placeholder="Digite seu nome" id="name"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black" />
+
+            <p class="font-bold mt-4">Forma de Pagamento:</p>
+            <select id="payment-method" class="w-full border-2 p-1 rounded my-1 bg-orange-100">
+                <option value="Em dinheiro">Em dinheiro</option>
+                <option value="Cartão de crédito">Cartão de Crédito ou Debito</option>
+                <option value="Pix">Pix</option>
+            </select>
+
+            <p class="font-bold mt-4">Detalhes Adicionais:</p>
+            <textarea placeholder="Digite detalhes adicionais" id="additional-info"
+                class="w-full border-2 p-1 rounded my-1 bg-orange-100 placeholder-black"></textarea>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="closed-model-btn" class="bg-red-600 text-white px-4 py-1 rounded">Fechar</button>
+                <button id="checkout-btn" class="bg-green-600 text-white px-4 py-1 rounded">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+    <!--FIM MODAL CARD-->
+
+
+    <!--BUTTON CART FOOTER-->
+
+    <footer
+        class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center transition-footer footer-hidden"
+        id="cart-footer">
+        <button class="text-white flex items-center gap-2 font-bold" id="cart-btn">
+            (<span id="cart-count" class="">0</span>)
+            Meu carrinho
+            <span class="material-symbols-outlined text-white">
+                <img src="./assets/add_shopping.svg" alt="card-add" class="w-6 h-6">
+            </span>
+        </button>
+    </footer>
+
+    <!--FIM BUTTON CART FOOTER-->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./scripts/orderCart.js"></script>
+    <script src="./scripts/statusStore.js"></script>
+</body>
+
+</html>
