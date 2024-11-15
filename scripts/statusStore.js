@@ -5,7 +5,7 @@ function isStoreOpen() {
     const currentMinute = now.getMinutes();
 
     // Horário de funcionamento da loja
-    const openingHour = 9; // 16:00
+    const openingHour = 9; // 17:00
     const closingHour = 22;  // 00:40 (meia-noite e 40)
     const closingMinute = 30;
 
